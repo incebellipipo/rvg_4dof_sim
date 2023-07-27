@@ -3,16 +3,23 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "model4dof"
-version = "0.0.1"
+name = "rvg_4dof_sim"
+dynamic = ["version", "dependencies"]
 authors = [
   { name="Mathias Marley", email="author@example.com" },
 ]
-description = "A small example package"
+maintainers = [
+  { name="Emir Cem Gezer", email="emir.cem.gezer@ntnu.no"}
+]
+description = "R/V Gunnerus 4DOF Simulation"
 readme = "README.md"
 requires-python = ">=3.7"
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
+    "License :: OSI Approved :: GPLv3",
     "Operating System :: OS Independent",
 ]
+
+[tool.setuptools.dynamic]
+version = {attr = "rvg_4dof_sim.VERSION"}
+dependencies = {file = ["requirements.txt"]}
