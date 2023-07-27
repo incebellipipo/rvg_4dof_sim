@@ -3,8 +3,9 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "rvg_4dof_sim"
-dynamic = ["version", "dependencies"]
+name = "mcsimpy"
+version = "0.0.1"
+dynamic = ["dependencies"]
 authors = [
   { name="Mathias Marley", email="author@example.com" },
 ]
@@ -16,10 +17,17 @@ readme = "README.md"
 requires-python = ">=3.7"
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: GPLv3",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
     "Operating System :: OS Independent",
 ]
 
 [tool.setuptools.dynamic]
-version = {attr = "rvg_4dof_sim.VERSION"}
+# version = {attr = "rvg_4dof_sim.VERSION"}
 dependencies = {file = ["requirements.txt"]}
+
+[tool.hatch.build.targets.wheel]
+only-include = ["src/mcsimpy", "scripts"]
+
+[tool.hatch.build.targets.wheel.sources]
+"src" = ""
+"scripts" = "scripts"

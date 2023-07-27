@@ -1,31 +1,31 @@
-# -*- coding: utf-8 -*-
-# ----------------------------------------------------------------------------
-# This code is part of the MCSim_python toolbox and repository.
+#!/usr/bin/env python3
+
+# MCSim_python
+# Copyright (C) 2022, NTNU - Norges teknisk-naturvitenskapelige universitet
+# This file is part of MCSim_python.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>
+#
 # Created By: M. Marley
 # Created Date: 2022-02-04
-# Revised: 2022-04-29	M. Marley Updated thruster model
-#          <date>	<developer> <description>
-# Tested:  2022-02-04 M.Marley Checked that results make sense
-#
-# Copyright (C) 202x: <organization>, <place>
-# Licensed under GPL-3.0-or-later
-# ---------------------------------------------------------------------------
+
 """
 Library of functions for running the 4DOF RVG maneuvering model.
 May also be used to model any vessel with two azimuth thrusters, by loading
 desired vessel and actuator data.
 """
-# ---------------------------------------------------------------------------
-# Imports/dependencies: self-explanatory
-# ---------------------------------------------------------------------------
 
-
-# =============================================================================
-# Set path
-# =============================================================================
-import os
-from pathlib import Path
-import sys
 # =============================================================================
 # Import modules
 # =============================================================================
@@ -33,11 +33,6 @@ import numpy as np
 from mcsimpy.models.rv_gunnerus_4dof import kinematics as km
 from mcsimpy.models.rv_gunnerus_4dof import kinetics as kt
 from mcsimpy.models.rv_gunnerus_4dof import thrusters as th
-
-# =============================================================================
-# Functions
-# =============================================================================
-
 
 def dot_RVG_Man_4DOF(x,tau,w,parV,parA,parS):
     """Time derivative of RVG 4DOF vessel model, moving in uniform

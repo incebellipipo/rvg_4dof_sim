@@ -5,10 +5,9 @@ services:
     - infinity
     image: rvg_4dof_dev
     build:
-      dockerfile: .dev-container.dockerfile
+      dockerfile: devcontainer.dockerfile
     init: true
     volumes:
     - type: bind
       source: /var/run/docker.sock
       target: /var/run/docker.sock
-

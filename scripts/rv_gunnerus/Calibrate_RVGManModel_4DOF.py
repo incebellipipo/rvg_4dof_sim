@@ -1,15 +1,25 @@
-# -*- coding: utf-8 -*-
-# ----------------------------------------------------------------------------
-# This code is part of the MCSim_python toolbox and repository.
+#!/usr/bin/env python3
+
+# MCSim_python
+# Copyright (C) 2022, NTNU - Norges teknisk-naturvitenskapelige universitet
+# This file is part of MCSim_python.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>
+#
 # Created By: M. Marley
 # Created Date: 2022-12-12
-# Revised: <date>	<developer> <description>
-#          <date>	<developer> <description>
-# Tested:  2022-12-12 M.Marley Checked that results make sense
-#
-# Copyright (C) 202x: <organization>, <place>
-# Licensed under GPL-3.0-or-later
-# ---------------------------------------------------------------------------
+
 """
 Numerical simulation of a 4DOF maneuvering model of RVG, with commanded
 thruster states taken from sea trials performed Fall 2022 in Trondheim fjord.
@@ -19,24 +29,13 @@ Default model parameters are calibrated towards sea trial results.
 The sea trials were performed for operating conditions slightly outside
 the validity range of the thruster model. This gives a warning.
 """
-# ---------------------------------------------------------------------------
-# Imports/dependencies: used together with Module_RVGManModel4DOF
-# ---------------------------------------------------------------------------
-
-# =============================================================================
-# Set path
-# =============================================================================
-
-import os
-from pathlib import Path
-import sys
 
 # =============================================================================
 # Load general modules
 # =============================================================================
 import matplotlib.pyplot as plt
 import numpy as np
-import kinematics as km
+import mcsimpy.models.rv_gunnerus_4dof.kinematics as km
 
 # =============================================================================
 # Load model module

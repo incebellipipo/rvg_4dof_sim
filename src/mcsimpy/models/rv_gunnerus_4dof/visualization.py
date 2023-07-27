@@ -25,7 +25,6 @@ from matplotlib import pyplot as plt
 from matplotlib import animation as anim
 
 
-
 def plot_timeseries(t,x,parP):
     """Plots timeseries in individual plots.
        Input
